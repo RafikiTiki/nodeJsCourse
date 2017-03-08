@@ -13,8 +13,18 @@ const flash = require('connect-flash')
 
 const app = express()
 
+const uri = 'mongodb://Rafiki:Kotek1@ds121980.mlab.com:21980/heroku_7l863gl3'
+
+console.log('MongoDB URI:', uri)
+
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://Rafiki:Kotek1@ds121980.mlab.com:21980/heroku_7l863gl3')
+mongoose.connect(uri, function (err, res) {
+  if (err) {
+    console.log ('ERROR connecting to: ' + uri + '. ' + err);
+  } else {
+    console.log ('Succeeded connected to: ' + uri);
+  }
+})
 
 require('./config/passport')
 
@@ -42,6 +52,6 @@ app.use(passport.session())
 require('./routes/user')(app, passport)
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log('App runing...')
 })
