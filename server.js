@@ -51,7 +51,8 @@ app.use(passport.session())
 
 require('./routes/user')(app, passport)
 
+const port = process.env.PORT || 3000
 
-app.listen(process.env.PORT, () => {
-  console.log('App runing...')
+app.listen(port, () => {
+  console.log('App runing on ...', port)
 })
