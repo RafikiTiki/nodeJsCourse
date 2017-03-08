@@ -14,7 +14,7 @@ const flash = require('connect-flash')
 const app = express()
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/rateme')
+mongoose.connect('mongodb://heroku_7l863gl3:uicja6qlg6n0dmi4k4qh8ro3t2@ds121980.mlab.com:21980/heroku_7l863gl3')
 
 require('./config/passport')
 
