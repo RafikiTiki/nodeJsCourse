@@ -43,5 +43,5 @@ require('./routes/user')(app, passport)
 
 
 app.listen(3000, () => {
-  console.log('App runing on port 3000')
+  console.log('App runing...')
 })
