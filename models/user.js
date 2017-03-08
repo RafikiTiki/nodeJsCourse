@@ -20,7 +20,6 @@ userSchema.methods.encryptPassword = password => {
 }
 
 userSchema.methods.validPassword = function(password) {
-  console.log(this)
   return bcrypt.compareSync(password, this.password)
 }
 
