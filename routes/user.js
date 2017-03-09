@@ -138,8 +138,7 @@ module.exports = (app, passport) => {
               req.flash('error', messages)
               res.redirect(`/reset/${req.params.token}`)
             } else {
-              const syf = new User()
-              user.password = syf.encryptPassword(req.body.newPassword)
+              user.password = user.encryptPassword(req.body.newPassword)
               user.passwordResetToken = ''
               user.passwordResetExpires = Date.now()
 
