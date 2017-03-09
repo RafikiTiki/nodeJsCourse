@@ -1,0 +1,55 @@
+<% layout('layout') %>
+
+<div class="container">
+    <br><br>
+    <div class="text-center reg_msg">
+        <h1><a href="/">RateMe</a></h1>
+    </div>
+    <br><br>
+
+
+    <div class="text-center reg_msg">
+        <h2 class="fancy"><span>Reset password</span></h2>
+    </div><br>
+
+    <div class="row login">
+
+        <% if(hasErrors) {%>
+        <% for(var i = 0; i < messages.length; i++) {%>
+        <div class="alert alert-danger aler-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <%= messages[i] %>
+        </div>
+        <%}%>
+        <%}%>
+
+        <% if(isSuccess) {%>
+        <div class="alert alert-success aler-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <%= success %>
+        </div>
+        <%}%>
+
+        <form method="POST">
+
+            <div class="form-group input_group">
+                <input id="password" class="form-control" name="newPassword" type="password" placeholder="NEW PASSWORD" style="margin-bottom:20px;">
+            </div>
+
+            <div class="form-group input_group">
+                <input id="password" class="form-control" name="confirmPassword" type="password" placeholder="CONFIRM NEW PASSWORD" style="margin-bottom:20px;">
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" id="reset" value="Reset password" class="form-control btn btn-primary" name="submit" style="">
+            </div>
+
+        </form>
+
+    </div>
+</div>
