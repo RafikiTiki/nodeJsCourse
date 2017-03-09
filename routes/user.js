@@ -82,7 +82,7 @@ module.exports = (app, passport) => {
           subject: 'RafixDev application password reset token',
           text: 'You have requested a password reset token. \n\n'+
                 'Please click on the link below to complete the process: \n\n'+
-                'http://localhost:3000/reset/'+rand+'\n\n'
+                'https://calm-dawn-79778.herokuapp.com//reset/'+rand+'\n\n'
 
         }
 
