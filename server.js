@@ -12,7 +12,7 @@ const flash = require("connect-flash");
 
 const app = express();
 
-const uri = "mongodb://Rafiki:Kotek1@ds121980.mlab.com:21980/heroku_7l863gl3";
+const uri = process.env.MONGODB_URI;
 
 mongoose.Promise = global.Promise;
 mongoose.connect(uri, function(err, res) {
